@@ -1,0 +1,98 @@
+/* Reset CSS */
+/* 
+
+* {
+  box-sizing: border-box;
+}
+
+*/
+
+body {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Fin Reset CSS */
+
+.container {
+  background-color: lightgoldenrodyellow;
+  width: 980px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: lightblue;
+  height: 100px;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  background-color: lightseagreen;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+main {
+  background-color: lightskyblue;
+}
+
+main > div {
+  float: left;
+}
+
+main > div:nth-child(1) {
+  width: 30%;
+  padding: 10px 0;
+  background-color: lightsalmon;
+}
+
+main > div:nth-child(1) a {
+  margin: 1em 0;
+  display: block;
+  background-color: brown;
+}
+
+main > div:nth-child(2) {
+  box-sizing: border-box;
+  width: 70%;
+  /* width: calc(70% - (2 * 10px)); */
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li + li::before {
+  content: ' > ';
+}
+
+.gallery > div {
+  margin-right: 6px;
+  margin-bottom: 6px;
+  float: left;
+  width: calc(33.33% - 4px);
+  height: 150px;
+  background-color: lightcoral;
+}
+
+.gallery > div:nth-child(3n+3) {
+  margin-right: 0;
+}
+
+/* Utilitaires */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* Fin Utilitaires */
