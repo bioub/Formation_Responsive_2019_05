@@ -1,0 +1,121 @@
+/* Reset CSS */
+/* 
+
+* {
+  box-sizing: border-box;
+}
+
+*/
+
+body {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+/* Fin Reset CSS */
+
+.container {
+  background-color: lightgoldenrodyellow;
+  width: 980px;
+  margin: 0 auto;
+  display: grid;
+  /* EXERCICE */
+  /* Dessiner la grille */
+  /* soit comme dans CSS Grid Garden avec grid-template-rows et grid-template-columns 
+  puis placer les élement sur la grille avec grid-(columns|rows)-(start|end) */
+
+  /* soit comme dans https://developer.mozilla.org/fr/docs/Web/CSS/grid-template-areas avec grid-template-rows et grid-template-columns 
+  puis definir les elements avec grid-template-areas et les placer avec grid-area */
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+
+header {
+  background-color: lightblue;
+  height: 100px;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav {
+  background-color: lightseagreen;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+aside {
+  padding: 10px 0;
+  background-color: lightsalmon;
+}
+
+aside a {
+  margin: 1em 0;
+  display: block;
+  background-color: brown;
+}
+
+main {
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: lightgrey;
+}
+
+
+@media (max-width: 500px) {
+  main {
+    flex-direction: column-reverse;
+  }
+  /* main > div {
+    float: unset;
+  } */
+  main > div:nth-child(1), main > div:nth-child(2) {
+    width: unset;
+  }
+}
+
+
+.breadcrumb li {
+  display: inline;
+}
+
+.breadcrumb li + li::before {
+  content: ' > ';
+}
+
+@media (max-width: 500px) { 
+  .breadcrumb {
+    display: none;
+  }
+}
+
+.gallery {
+  display: grid;
+  /* EXERCICE Définir une grille de 3 colonnes et n lignes (grid-auto-rows)
+  et leur donner des tailles avec grid-template-(columns|rows) */
+  /* utiliser grid-gap pour l'espace entre 2 cellules */
+}
+
+.gallery > div {
+  background-color: lightcoral;
+}
+
+
+/* Utilitaires */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* Fin Utilitaires */
