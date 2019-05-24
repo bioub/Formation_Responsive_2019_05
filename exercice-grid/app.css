@@ -20,8 +20,15 @@ nav ul {
 .container {
   background-color: lightgoldenrodyellow;
   width: 980px;
+  height: 100vh;
   margin: 0 auto;
   display: grid;
+
+  grid-template-rows: 100px auto; /* minmax (vh) */
+  grid-template-columns: 200px 1fr;
+
+  grid-template-areas: "h h"
+                       "a m";
   /* EXERCICE */
   /* Dessiner la grille */
   /* soit comme dans CSS Grid Garden avec grid-template-rows et grid-template-columns 
@@ -34,12 +41,18 @@ nav ul {
 @media (max-width: 500px) {
   .container {
     width: 100%;
+    grid-template-rows: 100px auto auto; /* minmax (vh) */
+    grid-template-columns: unset;
+
+    grid-template-areas: "h"
+                         "m"
+                         "a";
   }
 }
 
 header {
+  grid-area: h;
   background-color: lightblue;
-  height: 100px;
   position: relative;
 }
 
@@ -54,8 +67,8 @@ header nav {
   right: 0;
 }
 
-
 aside {
+  grid-area: a;
   padding: 10px 0;
   background-color: lightsalmon;
 }
@@ -67,24 +80,11 @@ aside a {
 }
 
 main {
+  grid-area: m;
   box-sizing: border-box;
   padding: 10px;
   background-color: lightgrey;
 }
-
-
-@media (max-width: 500px) {
-  main {
-    flex-direction: column-reverse;
-  }
-  /* main > div {
-    float: unset;
-  } */
-  main > div:nth-child(1), main > div:nth-child(2) {
-    width: unset;
-  }
-}
-
 
 .breadcrumb li {
   display: inline;
@@ -102,9 +102,15 @@ main {
 
 .gallery {
   display: grid;
-  /* EXERCICE Définir une grille de 3 colonnes et n lignes (grid-auto-rows)
-  et leur donner des tailles avec grid-template-(columns|rows) */
-  /* utiliser grid-gap pour l'espace entre 2 cellules */
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  grid-gap: 6px;
+}
+
+@media (max-width: 500px) { 
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .gallery > div {

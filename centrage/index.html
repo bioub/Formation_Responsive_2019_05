@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .inline-dans-block {
+        height: 100px;
+        background-color: lightcoral;
+        margin: 1em 0;
+        text-align: center; /* centrage horizontal (d'un contenu inline) */
+        line-height: 100px; /* centrage vertical (d'une ligne) */
+      }
+
+      .block-dans-block {
+        height: 100px;
+        background-color: lightcoral;
+        margin: 1em 0;
+      }
+      
+      .block-dans-block p {
+        background-color: lightgoldenrodyellow;
+        width: 80%;
+        margin: 0 auto; /* centrage horizontal (d'un contenu block) */
+        
+        /* centrage vertical (d'un contenu block) */
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .block-dans-flex {
+        height: 100px;
+        background-color: lightcoral;
+        margin: 1em 0;
+        display: flex;
+      }
+      
+      .block-dans-flex__p {
+        background-color: lightgoldenrodyellow;
+        width: 80%;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="inline-dans-block">
+      <span>Texte</span>
+    </div>
+    <div class="block-dans-block">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit,
+        aspernatur. Hic quas eos repellendus dicta accusamus, dolorem
+        consectetur pariatur consequatur ad eius inventore qui expedita eaque
+        tempore cum minus enim.
+      </p>
+    </div>
+
+    <div class="block-dans-flex">
+        <p class="block-dans-flex__p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit,
+          aspernatur. Hic quas eos repellendus dicta accusamus, dolorem
+          consectetur pariatur consequatur ad eius inventore qui expedita eaque
+          tempore cum minus enim.
+        </p>
+      </div>
+  </body>
+</html>
